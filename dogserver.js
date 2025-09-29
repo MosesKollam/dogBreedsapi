@@ -2,7 +2,7 @@ const fs = require('fs');
 const http = require('http');
 const url = require('url');
 const path = require('path');
-
+const port = process.env.PORT ||8080;
 const base_path = `${__dirname}`;
 const index = "dogs.html"
 
@@ -35,7 +35,8 @@ fs.readFile(path.join(base_path, index), function (error, data) {
             })
         }
     })
-    server.listen(8000, '127.0.0.1', function () {
+    server.listen(port, function () {
         console.log('Server running');
     })
+
 })
